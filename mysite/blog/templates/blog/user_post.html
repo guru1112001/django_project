@@ -1,6 +1,7 @@
 {%extends "blog/base.html" %}
 {% load %}
 {% block content %}
+<h1 class="mb-3">posts by {{view.kwargs.username }} ({{page_obj.paginator.count }})</h1>
 {% for post in posts %}
 <article class="media content-section">
     <img class="rounded-circle article-img" src="{{post.author.profile.url}}">
