@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import environ
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -137,9 +138,13 @@ EMAIL_TLS = True
 EMAIL_HOST_USER = "gbhtia266@gmail.com"
 EMAIL_HOST_USER = ""
 
-AWS_ACCESS_KEY_ID = "AKIA6JYVLQMT6WMM4GPB"
-AWS_SECRET_ACCESS_KEY = "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"
-AWS_STORAGE_BUCKET_NAME = "blog-project-files"
+
+env = environ.Env()
+environ.Env.read_env()
+
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
 
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
