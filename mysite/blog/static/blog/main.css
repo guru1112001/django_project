@@ -13,7 +13,7 @@ body {
   }
   
   .bg-steel {
-    background-color: #5f788a;
+    background-color: #5f788a !important ;
   }
   
   .site-header .navbar-nav .nav-link {
